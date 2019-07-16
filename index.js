@@ -21,7 +21,7 @@ app.use("/api/users/:id/messages",
 loginRequired, 
 ensureCorrectUser,
 messageRoutes);
-
+app.get("/", (req,res)=>{return res.json("welcome to Swallow")})
 app.get("/api/messages", loginRequired, async function(req,res,next){
     try{
 let messages = await db.Message.find()
